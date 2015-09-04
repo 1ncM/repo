@@ -27,4 +27,4 @@ month_days.each_with_index do |i,index|
     number += i
   end
 end
-p number
+puts number
