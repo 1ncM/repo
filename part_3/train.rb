@@ -23,18 +23,19 @@ class Train
   end
 
   def hitch_wagon                        # прицепить вагон
-  	@number_of_wagon += 1 if @speed > 0
+  	@number_of_wagon += 1 if @speed == 0
   end
 
   def detach_wagon 						           # отцепить вагон
-    @number_of_wagon -= 1 if @speed > 0 && @number_of_wagon > 1
+    @number_of_wagon -= 1 if @speed == 0 && @number_of_wagon > 1
   end
 
-  def take_route(route) 						             # принять маршрут следования
+  def take_route(route) 						      # принять маршрут следования
     @route = route
+    puts "принят маршрут #{route}"
   end
 
-  def move_between_stations			      	 # переместиться между станциями
+  def move_between_stations			      	  # переместиться между станциями
   end
 
   def show_next_station

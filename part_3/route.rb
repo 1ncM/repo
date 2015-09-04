@@ -1,17 +1,22 @@
 class Route
-  $STATIONS = %w(Новогиреево Перово Шоссе\ Энтузиастов Авиамоторная Площадь\ Ильича)
-  def initialize(start_station, end_station)
-    @start_station = start_station
-    @end_station = end_station
+
+  def initialize(start_station, end_station, between = [])
+  	@stations = [start_station,@between = between,end_station]
   end
 
   def add_station(name_station)
+  	@between << name_station
+  	puts "добавлена станция #{name_station}"
   end
 
   def delete_station(name_station)
+  	  @between.delete(name_station)
+  	  @stations.delete(name_station)
+    puts "удалена станция #{name_station}"
   end
 
   def show_all_station
+    @stations
   end
 
 end
