@@ -1,24 +1,27 @@
 class Route
 
-  def initialize(start_station, end_station, between = [])
-  	@stations = [start_station,@between = between,end_station]
+  def initialize
+  	@route = []
   end
 
-  def add_station(name_station)
-  	@between << name_station
-  	puts "добавлена станция #{name_station}"
+  def add_station(station)
+  	@route.push(station)
   end
 
-  def delete_station(name_station)
-  	  @between.delete(name_station)
-  	  @stations.delete(name_station)
-    puts "удалена станция #{name_station}"
+  def delete_station(station)
+  	@route.delete(station)
   end
 
-  def show_all_station
-    @stations
+  def stations
+    @route
+  end
+
+  def first
+    @route.first
+  end
+
+  def last
+    @route.last
   end
 
 end
-
-# p new_route = Route.new("Новогиреево", "Перово")

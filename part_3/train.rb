@@ -1,50 +1,58 @@
 class Train
   
+  attr_accessor :type
+
   def initialize(type, number_of_wagon)
     @type = type
     @number_of_wagon = number_of_wagon
     @speed = 0
   end
 
-  def increase_speed(speed)
+  def speed_up(speed)
   	@speed += speed
   end
 
-  def show_current_speed
+  def current_speed
   	@speed
   end
 
-  def slow_down(speed)
+  def speed_down(speed)
   	@speed -= speed
   end
 
-  def show_number_of_wagon
+  def number_of_wagon
     @number_of_wagon
   end
 
-  def hitch_wagon                        # прицепить вагон
+  def hitch_wagon                         # прицепить вагон
   	@number_of_wagon += 1 if @speed == 0
   end
 
-  def detach_wagon 						           # отцепить вагон
+  def detach_wagon 						            # отцепить вагон
     @number_of_wagon -= 1 if @speed == 0 && @number_of_wagon > 1
   end
 
   def take_route(route) 						      # принять маршрут следования
-    @route = route
+    @route = route.stations
+    @station = @route.first
     puts "принят маршрут #{route}"
+    self
   end
 
-  def move_between_stations			      	  # переместиться между станциями
+  def move!(station)			      	        # переместиться между станциями
+    @station = station
   end
 
-  def show_next_station
+  def next_station
+    @route[@route.index(@station) + 1]
   end
 
-  def show_current_station
+  def current_station
+    @station
   end
 
-  def show_previous_station
+  def pre_station
+    @route[@route.index(@station) - 1]
   end
 
 end
