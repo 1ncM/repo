@@ -14,7 +14,7 @@ class RailwayStation
   end
 
   def current_train_on_type(type)         #список поездов по типу
-    @train_list.each {|i| puts i if i.type == type }
+    @train_list.each {|i| p i if i.type == type }
   end
 
   def send_train(train)					    #отправить поезд
