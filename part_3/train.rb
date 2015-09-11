@@ -2,8 +2,7 @@ class Train
   
   attr_accessor :type
 
-  def initialize(type, number_of_wagon)
-    @type = type
+  def initialize(number_of_wagon)
     @number_of_wagon = number_of_wagon
     @speed = 0
   end
@@ -25,7 +24,7 @@ class Train
   end
 
   def hitch_wagon                         # прицепить вагон
-  	@number_of_wagon += 1 if @speed == 0
+    @number_of_wagon += 1 if @speed == 0
   end
 
   def detach_wagon 						            # отцепить вагон
