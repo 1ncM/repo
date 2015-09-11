@@ -5,19 +5,19 @@ class RailwayStation
     @train_list = []
   end
 
-  def take_the_train!(train)		  	#принять поезд
+  def take_the_train!(train)		  	
     @train_list.push(train)
   end
 
-  def current_train			            #список всех поездов на станции на текущий момент
+  def current_train			            
     @train_list
   end
 
-  def current_train_on_type(type)         #список поездов по типу
+  def current_train_on_type(type)         
     @train_list.each {|i| p i if i.type == type }
   end
 
-  def send_train(train)					    #отправить поезд
+  def send_train(train)					   
     @train_list.delete(train)
   end
 

@@ -1,6 +1,6 @@
 class Train
-  
-  attr_accessor :type
+
+  attr_reader :type
 
   def initialize(number_of_wagon)
     @number_of_wagon = number_of_wagon
@@ -23,22 +23,22 @@ class Train
     @number_of_wagon
   end
 
-  def hitch_wagon                         # прицепить вагон
+  def hitch_wagon                         
     @number_of_wagon += 1 if @speed == 0
   end
 
-  def detach_wagon 						            # отцепить вагон
+  def detach_wagon 						            
     @number_of_wagon -= 1 if @speed == 0 && @number_of_wagon > 1
   end
 
-  def take_route(route) 						      # принять маршрут следования
+  def take_route(route) 						      
     @route = route.stations
     @station = @route.first
     puts "принят маршрут #{route}"
     self
   end
 
-  def move!(station)			      	        # переместиться между станциями
+  def move!(station)			      	        
     @station = station
   end
 
