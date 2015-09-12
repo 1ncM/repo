@@ -23,12 +23,12 @@ class Train
     @number_of_wagon
   end
 
-  def hitch_wagon                         
-    @number_of_wagon += 1 if @speed == 0
+  def hitch_wagon(wagon)                        
+    @number_of_wagon += 1 if @type == wagon.type && @speed == 0  
   end
 
-  def detach_wagon 						            
-    @number_of_wagon -= 1 if @speed == 0 && @number_of_wagon > 1
+  def detach_wagon(wagon)			            
+    @number_of_wagon -= 1 if @type == wagon.type && @speed == 0 && @number_of_wagon > 1
   end
 
   def take_route(route) 						      
