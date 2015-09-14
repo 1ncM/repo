@@ -1,10 +1,9 @@
 class Train
 
-  attr_reader :type
-
   def initialize(number_of_wagon)
     @number_of_wagon = number_of_wagon
     @speed = 0
+    @wagons = []
   end
 
   def speed_up(speed)
@@ -24,11 +23,11 @@ class Train
   end
 
   def hitch_wagon(wagon)                        
-    @number_of_wagon += 1 if @type == wagon.type && @speed == 0  
+    @wagons << wagon if type_train_wagon?(wagon) && train_stoped? 
   end
 
   def detach_wagon(wagon)			            
-    @number_of_wagon -= 1 if @type == wagon.type && @speed == 0 && @number_of_wagon > 1
+    @wagons.delete(wagon) if train_stoped? && @number_of_wagon > 0
   end
 
   def take_route(route) 						      
@@ -53,6 +52,18 @@ class Train
   def pre_station
     @route[@route.index(@station) - 1]
   end
+
+protected
+
+  attr_accessor :type, :wagons
+
+  def train_stoped?
+    current_speed == 0
+  end
+
+  def type_train_wagon?(wagon)
+    @type == wagon.type
+  end 
 
 end
 

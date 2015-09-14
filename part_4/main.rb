@@ -7,16 +7,15 @@ require_relative 'cargo_train'
 require_relative 'passanger_wagon'
 require_relative 'cargo_wagon'
 
-p cargo_wagon = CargoWagon.new
-p passanger_wagon = PassangerWagon.new
+# p cargo_wagon = CargoWagon.new
+# p car_wagon = CargoWagon.new
 
-c_t = CargoTrain.new 45
-p_t = PassangerTrain.new 55
-p c_t
-c_t.hitch_wagon cargo_wagon
-c_t.hitch_wagon cargo_wagon
-p_t.hitch_wagon cargo_wagon
-p_t.hitch_wagon passanger_wagon
-p_t.hitch_wagon passanger_wagon
-p c_t
-p p_t
+# p passanger_wagon = PassangerWagon.new
+
+# c_t = CargoTrain.new 45
+# p_t = PassangerTrain.new 55
+# p c_t
+# c_t.hitch_wagon(cargo_wagon)
+# c_t.hitch_wagon(car_wagon)
+# p c_t
+
