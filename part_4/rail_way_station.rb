@@ -1,8 +1,13 @@
 class RailwayStation
-  
+   @@stations = []
   def initialize(station)
     @name_station = station
     @train_list = []
+    @@stations << @name_station
+  end
+
+  def self.all
+    @@stations
   end
 
   def take_the_train!(train)		  	

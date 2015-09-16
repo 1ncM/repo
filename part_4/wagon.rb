@@ -1,3 +1,5 @@
+require_relative 'company'
 class Wagon
-	    attr_reader :type
+	include Company
+	attr_reader :type
 end

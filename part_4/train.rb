@@ -1,9 +1,17 @@
+require_relative 'company'
 class Train
-
-  def initialize(number_of_wagon)
+  include Company
+  @@trains = {}
+  def initialize(number_of_wagon, number)
     @number_of_wagon = number_of_wagon
     @speed = 0
     @wagons = []
+    @number = number
+    @@trains[number] = self
+  end
+
+  def self.find(number)
+    @@trains[number] || nil
   end
 
   def speed_up(speed)
